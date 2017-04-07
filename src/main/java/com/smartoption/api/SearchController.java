@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SearchController {
     @RequestMapping("/")
-    public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
+    public String greeting(@RequestParam(value="Search", defaultValue="World") String name,
+           @RequestParam(value="Tag", defaultValue="All") String tag,
+           @RequestParam(value="Count", defaultValue="10")int count ) {
         return "Hello "+name;
     }
 }

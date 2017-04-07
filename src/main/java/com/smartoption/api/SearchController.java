@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SearchController {
-    @RequestMapping("/hello")
+    @RequestMapping("/")
     public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
         return "Hello "+name;
     }

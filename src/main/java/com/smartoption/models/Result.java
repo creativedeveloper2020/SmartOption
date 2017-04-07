@@ -5,14 +5,15 @@
  */
 package com.smartoption.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class Result {
     private String KeySearch;
     private int Count;
-    private List<Tag> Tags;
-    private List<ResultItem> Results;
+    private List<Tag> Tags=new ArrayList<>();
+    private List<ResultItem> Results=new ArrayList<>();
 
     /**
      * @return the KeySearch

@@ -13,11 +13,17 @@ public class Classifier {
      static  final String UClassifer_url="http://uclassify.com/browse/uClassify/Topics/ClassifyText?readkey=";//VlwyNkdvwOTo&text=apple";
      static  final String classiferkey="VlwyNkdvwOTo";
 
-     public static void Classify(String str) throws Exception {
+     public static String Classify(String str) throws Exception {
         String url= UClassifer_url+classiferkey+"&text="+str;
         org.jsoup.nodes.Document doc = Jsoup.connect(url).get();
+        String tag="N/A";
+        float val=-1;
         for (Element e : doc.select("class")) {
-            System.out.println(e);
+            if (Float.valueOf(e.attr("p"))>val){
+           tag= e.attr("className");
+           val=Float.valueOf(e.attr("p"));
+            }
         }
+        return tag;
      } 
 }

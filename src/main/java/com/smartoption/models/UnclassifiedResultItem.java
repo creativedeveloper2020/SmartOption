@@ -10,7 +10,12 @@ public class UnclassifiedResultItem {
    private String Title;
    private String UrlRef;
    private String Snippit;
-
+public UnclassifiedResultItem(){}
+public UnclassifiedResultItem(String title,String urlRef,String snippit){
+    Title=title;
+    UrlRef=urlRef;
+    Snippit=snippit;
+}
     /**
      * @return the Title
      */

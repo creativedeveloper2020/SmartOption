@@ -15,7 +15,14 @@ public class ResultItem {
    private String UrlRef;
    private String Snippit;
    private String Category;
-
+public ResultItem(){}
+public ResultItem(int rank,String title,String urlRef,String snippit,String category){
+    Rank=rank;
+    Title=title;
+    UrlRef=urlRef;
+    Snippit=snippit;
+    Category=category;
+}
     /**
      * @return the Rank
      */

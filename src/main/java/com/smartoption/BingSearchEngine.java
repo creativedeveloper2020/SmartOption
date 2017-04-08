@@ -40,7 +40,7 @@ public class BingSearchEngine {
         return results;
 }   
     
-    public static void main(String[] args) throws Exception {
-         BingSearchEngine.Search("apple", 10);
-    }
+//public static void main(String[] args) throws Exception {
+//     BingSearchEngine.Search("apple", 10);
+//}
 }

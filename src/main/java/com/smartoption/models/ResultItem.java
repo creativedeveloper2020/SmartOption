@@ -5,10 +5,7 @@
  */
 package com.smartoption.models;
 
-/**
- *
- * @author Ahmad
- */
+
 public class ResultItem {
    private int Rank;
    private String Title;

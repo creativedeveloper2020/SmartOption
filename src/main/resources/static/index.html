@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<html ng-app="app" ng-controller="start">
     <head>
-        <title>TODO supply a title</title>
+      
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/site.css">
+        
+        <script src="scripts/angular.js"></script>
+        <script src="scripts/angular-route.min.js"></script>
+         <script src="scripts/app.js" ></script>
+         <script src="scripts/search_factory.js"></script>
+         <script src="scripts/start.js"></script>
+         <script src="scripts/search_controller.js"></script>
+         <script src="scripts/view_result_controller.js"></script>
+         <title ng-bind="models.helloAngular"></title>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div ng-view >
+        
+
+      
+  </div>
     </body>
 </html>

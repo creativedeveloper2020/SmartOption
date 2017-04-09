@@ -1,4 +1,31 @@
 <div   ng-controller="view_result_controller" >
-    <div>{{Result}}</div>
+   
+    <link rel="stylesheet" href="../style/result.css" type="text/css"/>
+   
+
+
+
+<div class="container">
+
+<header>
+   <h1>City Gallery</h1>
+</header>
+  
+<nav>
+  <ul>
+    <li><a href="#">London</a></li>
+    <li><a href="#">Paris</a></li>
+    <li><a href="#">Tokyo</a></li>
+  </ul>
+</nav>
+
+<article>
+    <div ng-repeat="res in Result.results">
+  <h1>{{res.title}}</h1>
+  <p>{{res.snippit}}</p>
+  <p>{{res.category}}</p>
+</article>
+</div>
+ 
     
 </div>

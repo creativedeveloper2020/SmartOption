@@ -1,4 +1,4 @@
-<div   ng-controller="view_result_controller" >
+<div   ng-controller="search_controller" ng-init="getResult()" >
    
     <link rel="stylesheet" href="../style/result.css" type="text/css"/>
    
@@ -7,15 +7,21 @@
 
 <div class="container">
 
-<header>
-   <h1>City Gallery</h1>
-</header>
+
+    <div class="header"   ng-controller="search_controller" ng-init="init()">
+  <input type="text" placeholder="Search" ng-model="Search">
+  <button ng-click="submit()">Search</button>
+  </div>
   
 <nav>
   <ul>
-    <li><a href="#">London</a></li>
-    <li><a href="#">Paris</a></li>
-    <li><a href="#">Tokyo</a></li>
+      <li><a ng-click="submit()">Sports</a></li>
+    <li><a ng-click="submit()">Computers</a></li>
+    <li><a ng-click="submit()">Arts</a></li>
+    <li><a ng-click="submit()">Society</a></li>
+     <li><a ng-click="submit()">Health</a></li>
+     <li><a href="#">Business</a></li>
+     <li><a href="#">Games</a></li>
   </ul>
 </nav>
 

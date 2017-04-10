@@ -3,7 +3,7 @@ div.container {
     border: 1px solid gray;
 }
 
-header {
+.header {
     padding: 1em;
     color: white;
     background-color: black;

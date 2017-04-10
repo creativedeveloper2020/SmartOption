@@ -4,6 +4,7 @@ angular.module('app')
 
             var urlBase = 'http://localhost:8080/Engine/?Search=';
     var _Result="";
+   
             //var DataFactory = {};
 
 //            this.GetMeals = function () {
@@ -12,8 +13,8 @@ angular.module('app')
 this.getResult=function(){
     return _Result;
 };
-            this.Search = function (keySearch) {
-                return $http.get(urlBase+keySearch)
+            this.Search = function (Search,Count,Tag) {
+                return $http.get(urlBase+Search+'&Count='+Count+'&Tag='+Tag)
                
                     .success(function (response) {
                         //First function handles success

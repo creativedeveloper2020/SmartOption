@@ -16,6 +16,7 @@ angular.module('app')
         search_factory.Search($scope.Search,$scope.Count,$scope.Tag)
             .then(function (response) {
                 $scope.Result = response;
+      
          $window.location.href = '/#/result';
             }, function (error) {
                 $scope.Status = 'Unable to load customer data: ' + error.message;

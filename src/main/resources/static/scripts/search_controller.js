@@ -2,10 +2,10 @@
 angular.module('app')
        .controller('search_controller', ['$scope','$window','search_factory', function ($scope,$window, search_factory) {
        
-   
+  
   
     $scope.init=function() {
-         $scope.Search="World!";
+        
    $scope.Count=10;
    $scope.Tag="All";
     };
@@ -13,13 +13,17 @@ angular.module('app')
          $scope.Result=search_factory.getResult();
     };
     $scope.submit= function() {
+        if ($scope.Search==null)return;
+       if ($scope.Count==null)  $scope.Count=10;
+       if ($scope.Tag==null)$scope.Tag="All";
         search_factory.Search($scope.Search,$scope.Count,$scope.Tag)
             .then(function (response) {
-                $scope.Result = response;
-      
+                $scope.Result = response.data;
+        debugger;
          $window.location.href = '/#/result';
             }, function (error) {
                 $scope.Status = 'Unable to load customer data: ' + error.message;
             });
     };
+   
     }]);

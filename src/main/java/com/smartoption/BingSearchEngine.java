@@ -24,8 +24,11 @@ public class BingSearchEngine {
         org.jsoup.nodes.Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
         org.jsoup.select.Elements result = doc.select("li.b_algo");
         for (org.jsoup.nodes.Element res : result) {
-            Element e=res.child(0).child(0).child(0);
+            Element e=res.child(0).child(0);
             String linkHref = e.attr("href");
+            if ("".equals(linkHref)){
+                linkHref=e.child(0).attr("href");
+            }
             String title=e.text();
 
             Element e2=res.child(1).child(1);

@@ -5,6 +5,7 @@ angular.module('app')
             var urlBase = 'http://localhost:8080/Engine/?Search=';
     var _Result="";
    var KeyWord="";
+   var CountResult=0;
             //var DataFactory = {};
 
 //            this.GetMeals = function () {
@@ -16,14 +17,17 @@ this.getResult=function(){
 this.getKeyWord=function(){
   return KeyWord;  
 };
+this.getCountResult=function(){
+  return CountResult;  
+};
             this.Search = function (Search,Count,Tag) {
                 return $http.get(urlBase+Search+'&Count='+Count+'&Tag='+Tag)
                
                     .success(function (response) {
                         //First function handles success
                         KeyWord=Search;
+                        CountResult=Count;
                         _Result=response;
-                        alert("ok");
                         
                     }).error(function () {
                         //Second function handles error

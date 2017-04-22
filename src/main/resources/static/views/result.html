@@ -11,24 +11,28 @@
     <div class="header"  >
   <input type="text" placeholder="Search" ng-model="Search">
   <button ng-click="submit()">Search</button>
+  <p>
+     <input type="number" value="10" ng-model="Count">
+  </p>
   </div>
   
 <nav>
   <ul>
-      <li><a href="/#/result" ng-click="submit()">Sports</a></li>
-    <li><a href="/#/result" ng-click="submit()">Computers</a></li>
-    <li><a href="/#/result" ng-click="submit()">Arts</a></li>
-    <li><a href="/#/result" ng-click="submit()">Society</a></li>
-     <li><a href="/#/result" ng-click="submit()">Health</a></li>
-     <li><a href="/#/result" ng-click="submit()">Business</a></li>
-     <li><a href="/#/result" ng-click="submit()">Games</a></li>
+      <li><a href="/#/result" ng-click="submit('All')">All</a></li>
+     <li><a href="/#/result" ng-click="submit('Sports')">Sports</a></li>
+    <li><a href="/#/result" ng-click="submit('Computers')">Computers</a></li>
+    <li><a href="/#/result" ng-click="submit('Arts')">Arts</a></li>
+    <li><a href="/#/result" ng-click="submit('Society')">Society</a></li>
+     <li><a href="/#/result" ng-click="submit('Health')">Health</a></li>
+     <li><a href="/#/result" ng-click="submit('Business')">Business</a></li>
+     <li><a href="/#/result" ng-click="submit('Games')">Games</a></li>
   </ul>
 </nav>
 
 <article>
     <div ng-repeat="res in Result.results">
         <a href="{{res.urlRef}}"><h1>{{res.title}}</h1></a>
-  <p><{{res.snippit}}</p>
+  <p>{{res.snippit}}</p>
   <p>{{res.category}}</p>
 </article>
 </div>

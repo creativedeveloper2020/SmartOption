@@ -32,6 +32,7 @@ angular.module('app')
         if ($scope.Search==null)return;
        if ($scope.Count==null)  $scope.Count=10;
        if ($scope.Tag==null)$scope.Tag="All";
+       debugger;
         search_factory.Search($scope.Search,$scope.Count,$scope.Tag)
             .then(function (response) {
                 $scope.Result = response.data;

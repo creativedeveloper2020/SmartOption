@@ -31,9 +31,37 @@
 
 <article>
     <div ng-repeat="res in Result.results">
+        <div ng-if="res.category=='Computers'">
+             <img name="cim" src="../images/comp.png" style="width:30px;height:30px;" align="middle"/>
+             {{res.category}}
+        </div>
+        <div ng-if="res.category=='Sports'">
+            <img name="cim" src="../images/sport.png" style="width:30px;height:30px;" align="middle"/>
+             {{res.category}}
+        </div>
+        <div ng-if="res.category=='Business'">
+            <img name="cim" src="../images/bus.png" style="width:30px;height:30px;" align="middle"/>
+             {{res.category}}
+        </div>
+        <div ng-if="res.category=='Arts'">
+            <img name="cim" src="../images/arts.png" style="width:30px;height:30px;" align="middle"/>
+             {{res.category}}
+        </div>
+        <div ng-if="res.category=='Society'">
+            <img name="cim" src="../images/social.png" style="width:30px;height:30px;" align="middle"/>
+             {{res.category}}
+        </div>
+        <div ng-if="res.category=='Health'">
+            <img name="cim" src="../images/health.png" style="width:30px;height:30px;" align="middle"/>
+             {{res.category}}
+        </div>
+        <div ng-if="res.category=='Games'">
+            <img name="cim" src="../images/games.png" style="width:30px;height:30px;" align="middle"/>
+             {{res.category}}
+        </div>
         <a href="{{res.urlRef}}"><h1>{{res.title}}</h1></a>
   <p>{{res.snippit}}</p>
-  <p>{{res.category}}</p>
+ 
 </article>
 </div>
  

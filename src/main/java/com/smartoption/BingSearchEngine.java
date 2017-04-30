@@ -24,6 +24,7 @@ public class BingSearchEngine {
         org.jsoup.nodes.Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
         org.jsoup.select.Elements result = doc.select("li.b_algo");
         for (org.jsoup.nodes.Element res : result) {
+            try{
             Element e=res.child(0).child(0);
             String linkHref = e.attr("href");
             if ("".equals(linkHref)){
@@ -38,6 +39,7 @@ public class BingSearchEngine {
             System.out.println( snipper );
             System.out.println(Classifier.Classify(snipper));
            results.add(new UnclassifiedResultItem(title,linkHref,snipper));
+            }catch(Exception exp){}
             
 }
         return results;

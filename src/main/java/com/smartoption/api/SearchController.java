@@ -18,6 +18,6 @@ public class SearchController {
     public Result greeting(@RequestParam(value="Search", defaultValue="World") String keySearch,
            @RequestParam(value="Tag", defaultValue="All") String tag,
            @RequestParam(value="Count", defaultValue="10")int count ) {
-        return SmartOptionEngine.SmartSearch(keySearch, count);
+        return SmartOptionEngine.SmartSearch(keySearch, count,tag);
     }
 }

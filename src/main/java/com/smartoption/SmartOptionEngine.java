@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SmartOptionEngine {
-    public static Result SmartSearch(String keySearch,int size){
+    public static Result SmartSearch(String keySearch,int size,String Tag){
         Result result=new Result();
         result.setKeySearch(keySearch);
         result.setCount(size);
@@ -24,8 +24,10 @@ public class SmartOptionEngine {
              for(UnclassifiedResultItem item:li){
                  idx++;
             String tag=Classifier.Classify(item.getSnippit());
+            if (Tag.equalsIgnoreCase("All")|| Tag.equalsIgnoreCase(tag)){
             result.getResults().add(new ResultItem(idx,item.getTitle(),item.getUrlRef(),item.getSnippit(),tag));
-        }
+            }
+            }
         } catch (Exception ex) {
             Logger.getLogger(SmartOptionEngine.class.getName()).log(Level.SEVERE, null, ex);
         }

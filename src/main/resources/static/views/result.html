@@ -18,14 +18,10 @@
   
 <nav>
   <ul>
-      <li><a href="/#/result" ng-click="submit('All')">All</a></li>
-     <li><a href="/#/result" ng-click="submit('Sports')">Sports</a></li>
-    <li><a href="/#/result" ng-click="submit('Computers')">Computers</a></li>
-    <li><a href="/#/result" ng-click="submit('Arts')">Arts</a></li>
-    <li><a href="/#/result" ng-click="submit('Society')">Society</a></li>
-     <li><a href="/#/result" ng-click="submit('Health')">Health</a></li>
-     <li><a href="/#/result" ng-click="submit('Business')">Business</a></li>
-     <li><a href="/#/result" ng-click="submit('Games')">Games</a></li>
+     
+     <div ng-repeat="t in Result.tags" >
+          <li><a href="/#/result" ng-click="submit(t.key)">{{t.key}} ({{t.count}})</a></li>
+     </div>
   </ul>
 </nav>
 
@@ -57,6 +53,14 @@
         </div>
         <div ng-if="res.category=='Games'">
             <img name="cim" src="../images/games.png" style="width:30px;height:30px;" align="middle"/>
+             {{res.category}}
+        </div>
+        <div ng-if="res.category=='Home'">
+            <img name="cim" src="../images/home.png" style="width:30px;height:30px;" align="middle"/>
+             {{res.category}}
+        </div>
+        <div ng-if="res.category=='Science'">
+            <img name="cim" src="../images/si.png" style="width:30px;height:30px;" align="middle"/>
              {{res.category}}
         </div>
         <a href="{{res.urlRef}}"><h1>{{res.title}}</h1></a>

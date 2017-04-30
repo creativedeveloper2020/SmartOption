@@ -10,6 +10,11 @@ public class Tag {
     private String Key;
     private int Count;
 
+    public Tag(){}
+    public Tag(String KEY,int COUNT){
+        Key=KEY;
+        Count=COUNT;
+    }
     /**
      * @return the Key
      */
@@ -36,5 +41,8 @@ public class Tag {
      */
     public void setCount(int Count) {
         this.Count = Count;
+    }
+    public void PlusCount() {
+        this.Count++;
     }
 }

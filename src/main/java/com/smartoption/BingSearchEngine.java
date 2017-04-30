@@ -19,6 +19,7 @@ public class BingSearchEngine {
      
      public static List<UnclassifiedResultItem> Search(String keySearch,int size) throws Exception 
      {
+         
         List<UnclassifiedResultItem> results=new ArrayList<UnclassifiedResultItem>();
         String searchURL = BING_SEARCH_URL + "?q=" + keySearch + "&count=" + size;
         org.jsoup.nodes.Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
@@ -37,7 +38,7 @@ public class BingSearchEngine {
             System.out.println( "title: "+title );
             System.out.println( linkHref );
             System.out.println( snipper );
-            System.out.println(Classifier.Classify(snipper));
+            //System.out.println(classifier.Classify(snipper));
            results.add(new UnclassifiedResultItem(title,linkHref,snipper));
             }catch(Exception exp){}
             

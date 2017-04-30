@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 
 public class SmartOptionEngine {
     public static Result SmartSearch(String keySearch,int size,String Tag){
+        Classifier classifier=new Classifier();
         Result result=new Result();
         result.setKeySearch(keySearch);
         result.setCount(size);
@@ -23,7 +24,7 @@ public class SmartOptionEngine {
              int idx=0;
              for(UnclassifiedResultItem item:li){
                  idx++;
-            String tag=Classifier.Classify(item.getSnippit());
+            String tag=classifier.Classify(item.getSnippit());
             if (Tag.equalsIgnoreCase("All")|| Tag.equalsIgnoreCase(tag)){
             result.getResults().add(new ResultItem(idx,item.getTitle(),item.getUrlRef(),item.getSnippit(),tag));
             }
@@ -32,7 +33,7 @@ public class SmartOptionEngine {
             Logger.getLogger(SmartOptionEngine.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
+        result.setTags(classifier.getTagsResult());
      return result;
     }
 }

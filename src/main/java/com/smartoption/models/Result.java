@@ -6,13 +6,14 @@
 package com.smartoption.models;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
 public class Result {
     private String KeySearch;
     private int Count;
-    private List<Tag> Tags=new ArrayList<>();
+    private Collection<Tag> Tags=new ArrayList<>();
     private List<ResultItem> Results=new ArrayList<>();
 
     /**
@@ -46,14 +47,14 @@ public class Result {
     /**
      * @return the Tags
      */
-    public List<Tag> getTags() {
+    public Collection<Tag> getTags() {
         return Tags;
     }
 
     /**
      * @param Tags the Tags to set
      */
-    public void setTags(List<Tag> Tags) {
+    public void setTags(Collection<Tag> Tags) {
         this.Tags = Tags;
     }
 
